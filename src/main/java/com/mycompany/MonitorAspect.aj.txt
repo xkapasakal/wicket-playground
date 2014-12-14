@@ -1,0 +1,10 @@
+package com.mycompany;
+
+public aspect MonitorAspect {
+
+￼￼pointcut monitoredOp()
+        : execution(* com.mycompany.HomePage.doSomething(..));
+  before() : monitoredOp() {
+    System.out.println("Checking and authenticating user");
+    }
+}
